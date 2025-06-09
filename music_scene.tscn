@@ -1,0 +1,20 @@
+[gd_scene load_steps=7 format=3 uid="uid://cl4vgg2yg6vp3"]
+
+[ext_resource type="AudioStream" uid="uid://c2n7wudpasf6y" path="res://Music/1 - Love language.mp3" id="1_qk1c8"]
+[ext_resource type="AudioStream" uid="uid://bdxgvfqug3s3s" path="res://Music/2 - Love that can never be.mp3" id="2_r0a6o"]
+[ext_resource type="AudioStream" uid="uid://cluq8v3qryiqm" path="res://Music/6 - Days like these.mp3" id="3_e6vgu"]
+[ext_resource type="AudioStream" uid="uid://b627m7sdm6yob" path="res://Music/10 - Friends in need.mp3" id="4_o2hhr"]
+[ext_resource type="AudioStream" uid="uid://b7rpmkmsl4ied" path="res://Music/11 - Nothing can stop you.mp3" id="5_1riuk"]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_kc4xq"]
+stream_count = 5
+stream_0 = ExtResource("1_qk1c8")
+stream_1 = ExtResource("2_r0a6o")
+stream_2 = ExtResource("3_e6vgu")
+stream_3 = ExtResource("4_o2hhr")
+stream_4 = ExtResource("5_1riuk")
+
+[node name="Music" type="AudioStreamPlayer"]
+stream = SubResource("AudioStreamPlaylist_kc4xq")
+volume_db = -10.895
+bus = &"Music"

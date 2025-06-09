@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dofy4v4bctlrn"
+path="res://.godot/imported/12 - Walk. Run. Jump..mp3-c5b15a18fa1b57b2e1b71c95d14db247.mp3str"
+
+[deps]
+
+source_file="res://Music/12 - Walk. Run. Jump..mp3"
+dest_files=["res://.godot/imported/12 - Walk. Run. Jump..mp3-c5b15a18fa1b57b2e1b71c95d14db247.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://5o0mlmpdhhgq"]
+
+[ext_resource type="Script" uid="uid://rx2cauv4b8td" path="res://Scripts/Sound/VolumeSlider.cs" id="1_6neyp"]
+
+[node name="volume_slider" type="HSlider"]
+offset_right = 8.0
+offset_bottom = 16.0
+max_value = 1.0
+step = 0.001
+value = 0.5
+script = ExtResource("1_6neyp")

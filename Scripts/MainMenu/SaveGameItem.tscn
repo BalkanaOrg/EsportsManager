@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://cv12yn7k6m5tx"]
+
+[ext_resource type="Script" uid="uid://72ff5fpggvlf" path="res://Scripts/MainMenu/SaveGameItem.cs" id="1_pji86"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_104ar"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.0431373, 0.0588235, 0.101961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.117647, 0.164706, 0.227451, 1)
+
+[node name="PanelContainer" type="PanelContainer" node_paths=PackedStringArray("teamOrgLabel", "dateLabel", "loadButton", "deleteButton")]
+offset_right = 373.0
+offset_bottom = 76.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_104ar")
+script = ExtResource("1_pji86")
+teamOrgLabel = NodePath("HBoxContainer/VBoxContainer/Label")
+dateLabel = NodePath("HBoxContainer/VBoxContainer/Label2")
+loadButton = NodePath("HBoxContainer/VBoxContainer2/Button")
+deleteButton = NodePath("HBoxContainer/VBoxContainer2/Button2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+text = "Sigma Text on the Wall"
+autowrap_mode = 2
+clip_text = true
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Year: 2025, Week: 51"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Load"
+
+[node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+text = "Delete"

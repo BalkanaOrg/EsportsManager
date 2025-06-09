@@ -1,0 +1,14 @@
+G:\__BalkanaGames\esportsmanager\EsportsManager.Data\bin\Debug\net8.0\EsportsManager.Data.deps.json
+G:\__BalkanaGames\esportsmanager\EsportsManager.Data\bin\Debug\net8.0\EsportsManager.Data.runtimeconfig.json
+G:\__BalkanaGames\esportsmanager\EsportsManager.Data\bin\Debug\net8.0\EsportsManager.Data.dll
+G:\__BalkanaGames\esportsmanager\EsportsManager.Data\bin\Debug\net8.0\EsportsManager.Data.pdb
+G:\__BalkanaGames\esportsmanager\EsportsManager.Data\obj\Debug\net8.0\EsportsManager.Data.csproj.AssemblyReference.cache
+G:\__BalkanaGames\esportsmanager\EsportsManager.Data\obj\Debug\net8.0\EsportsManager.Data.GeneratedMSBuildEditorConfig.editorconfig
+G:\__BalkanaGames\esportsmanager\EsportsManager.Data\obj\Debug\net8.0\EsportsManager.Data.AssemblyInfoInputs.cache
+G:\__BalkanaGames\esportsmanager\EsportsManager.Data\obj\Debug\net8.0\EsportsManager.Data.AssemblyInfo.cs
+G:\__BalkanaGames\esportsmanager\EsportsManager.Data\obj\Debug\net8.0\EsportsManager.Data.csproj.CoreCompileInputs.cache
+G:\__BalkanaGames\esportsmanager\EsportsManager.Data\obj\Debug\net8.0\EsportsManager.Data.dll
+G:\__BalkanaGames\esportsmanager\EsportsManager.Data\obj\Debug\net8.0\refint\EsportsManager.Data.dll
+G:\__BalkanaGames\esportsmanager\EsportsManager.Data\obj\Debug\net8.0\EsportsManager.Data.pdb
+G:\__BalkanaGames\esportsmanager\EsportsManager.Data\obj\Debug\net8.0\EsportsManager.Data.genruntimeconfig.cache
+G:\__BalkanaGames\esportsmanager\EsportsManager.Data\obj\Debug\net8.0\ref\EsportsManager.Data.dll

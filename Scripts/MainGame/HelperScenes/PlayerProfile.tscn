@@ -1,0 +1,191 @@
+[gd_scene load_steps=4 format=3 uid="uid://bekbvfsctf6so"]
+
+[ext_resource type="Script" uid="uid://do4ysyyxa6jwq" path="res://Scripts/MainGame/HelperScenes/PlayerProfile.cs" id="1_ombsk"]
+[ext_resource type="Texture2D" uid="uid://yga2i047y5nf" path="res://Images/CountryFlags/flag_placeholder.png" id="1_s1xmp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ombsk"]
+bg_color = Color(0.0431373, 0.0588235, 0.101961, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.117647, 0.164706, 0.227451, 1)
+
+[node name="Control" type="Control" node_paths=PackedStringArray("Rating", "Flag", "Nickname", "Position", "Age", "Label1", "rating1", "Label2", "rating2", "Label3", "rating3", "Label4", "rating4", "Label5", "rating5", "Label6", "rating6")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_ombsk")
+Rating = NodePath("Panel/Rating")
+Flag = NodePath("Panel/Flag")
+Nickname = NodePath("Panel/Nickname")
+Position = NodePath("Panel/Position")
+Age = NodePath("Panel/Age")
+Label1 = NodePath("Panel/VBoxContainer/HBoxContainer2/VBoxContainer/label1")
+rating1 = NodePath("Panel/VBoxContainer/HBoxContainer2/VBoxContainer/rating1")
+Label2 = NodePath("Panel/VBoxContainer/HBoxContainer2/VBoxContainer2/label2")
+rating2 = NodePath("Panel/VBoxContainer/HBoxContainer2/VBoxContainer2/rating2")
+Label3 = NodePath("Panel/VBoxContainer/HBoxContainer2/VBoxContainer3/Label2")
+rating3 = NodePath("Panel/VBoxContainer/HBoxContainer2/VBoxContainer3/rating3")
+Label4 = NodePath("Panel/VBoxContainer/HBoxContainer2/VBoxContainer/label4")
+rating4 = NodePath("Panel/VBoxContainer/HBoxContainer2/VBoxContainer/rating4")
+Label5 = NodePath("Panel/VBoxContainer/HBoxContainer2/VBoxContainer2/label5")
+rating5 = NodePath("Panel/VBoxContainer/HBoxContainer2/VBoxContainer2/rating5")
+Label6 = NodePath("Panel/VBoxContainer/HBoxContainer2/VBoxContainer3/label6")
+rating6 = NodePath("Panel/VBoxContainer/HBoxContainer2/VBoxContainer3/rating6")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(192, 264)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ombsk")
+
+[node name="Panel" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 3.0
+offset_right = 144.0
+offset_bottom = 107.0
+
+[node name="Panel2" type="Panel" parent="Panel"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 104.0
+offset_right = 128.0
+offset_bottom = 136.0
+
+[node name="Nickname" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 112.0
+offset_right = 192.0
+offset_bottom = 136.0
+text = "ADASDASDASDASD"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rating" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 48.0
+offset_bottom = 40.0
+theme_override_font_sizes/font_size = 23
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Position" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 56.0
+offset_right = 48.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 10
+text = "Support"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Age" type="Label" parent="Panel"]
+layout_mode = 0
+offset_top = 72.0
+offset_right = 48.0
+offset_bottom = 104.0
+theme_override_font_sizes/font_size = 10
+text = "99"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Flag" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 40.0
+offset_bottom = 64.0
+texture = ExtResource("1_s1xmp")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 152.0
+offset_right = 189.0
+offset_bottom = 256.0
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="label1" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "MEC"
+vertical_alignment = 1
+
+[node name="rating1" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "100"
+vertical_alignment = 1
+
+[node name="label4" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "TEA"
+vertical_alignment = 1
+
+[node name="rating4" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+text = "100"
+vertical_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "REF"
+vertical_alignment = 1
+
+[node name="rating2" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "100"
+vertical_alignment = 1
+
+[node name="label5" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "COM"
+vertical_alignment = 1
+
+[node name="rating5" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "100"
+vertical_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/VBoxContainer3"]
+layout_mode = 2
+text = "ADA"
+vertical_alignment = 1
+
+[node name="rating3" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/VBoxContainer3"]
+layout_mode = 2
+text = "100"
+vertical_alignment = 1
+
+[node name="label6" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/VBoxContainer3"]
+layout_mode = 2
+text = "POT"
+vertical_alignment = 1
+
+[node name="rating6" type="Label" parent="Panel/VBoxContainer/HBoxContainer2/VBoxContainer3"]
+layout_mode = 2
+text = "100"
+vertical_alignment = 1

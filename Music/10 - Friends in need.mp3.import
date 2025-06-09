@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b627m7sdm6yob"
+path="res://.godot/imported/10 - Friends in need.mp3-80bc6da7eb11166fc04bbfe3c5a4646c.mp3str"
+
+[deps]
+
+source_file="res://Music/10 - Friends in need.mp3"
+dest_files=["res://.godot/imported/10 - Friends in need.mp3-80bc6da7eb11166fc04bbfe3c5a4646c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

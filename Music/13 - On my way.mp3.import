@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bmwgdkuolf2es"
+path="res://.godot/imported/13 - On my way.mp3-9b8277d0332a98e3231935361e9a563a.mp3str"
+
+[deps]
+
+source_file="res://Music/13 - On my way.mp3"
+dest_files=["res://.godot/imported/13 - On my way.mp3-9b8277d0332a98e3231935361e9a563a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

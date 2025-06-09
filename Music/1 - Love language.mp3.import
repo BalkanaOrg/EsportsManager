@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2n7wudpasf6y"
+path="res://.godot/imported/1 - Love language.mp3-de8eeef3977371acc62297ff7ca5c43f.mp3str"
+
+[deps]
+
+source_file="res://Music/1 - Love language.mp3"
+dest_files=["res://.godot/imported/1 - Love language.mp3-de8eeef3977371acc62297ff7ca5c43f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,278 @@
+[gd_scene load_steps=16 format=3 uid="uid://ciquwl8380tvk"]
+
+[ext_resource type="Script" uid="uid://mhjv03qbjidc" path="res://Scripts/GameManager.cs" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://btmj7msmu8dg0" path="res://Scripts/MainGame/TestPanel.cs" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://ddutr1nkpo0f0" path="res://Scripts/MainGame/HelperScenes/TeamLabels.tscn" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://conp1u2d77ipx" path="res://Scripts/MainGame/UIElements.cs" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://dhrgj5pgm87w7" path="res://Scripts/MainGame/LoadPlayersList.cs" id="4_lquwl"]
+[ext_resource type="Script" uid="uid://do4ysyyxa6jwq" path="res://Scripts/MainGame/HelperScenes/PlayerProfile.cs" id="5_272bh"]
+[ext_resource type="Texture2D" uid="uid://yga2i047y5nf" path="res://Images/CountryFlags/flag_placeholder.png" id="6_5vw27"]
+[ext_resource type="Script" uid="uid://d0rpe1g5be3aa" path="res://ScrollContainer.cs" id="7_5vw27"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qw4o"]
+bg_color = Color(0.0431373, 0.0588235, 0.101961, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.117647, 0.164706, 0.227451, 1)
+
+[sub_resource type="PackedScene" id="PackedScene_kek77"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Panel", "offset_right", "offset_bottom", "theme_override_styles/panel", "script", "Rating", "Flag", "Nickname", "Position", "Label1", "rating1", "Label2", "rating2", "Label3", "rating3", "Label4", "rating4", "Label5", "rating5", "Label6", "rating6", "layout_mode", "offset_left", "offset_top", "Panel2", "text", "horizontal_alignment", "vertical_alignment", "Label", "theme_override_font_sizes/font_size", "texture", "expand_mode", "stretch_mode", "TextureRect", "VBoxContainer", "alignment", "HBoxContainer2", "theme_override_constants/separation", "HBoxContainer", "label1", "label4", "VBoxContainer2", "label2", "label5", "VBoxContainer3", "label6"),
+"node_count": 24,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 0, 0, -1, 20, 1, 0, 2, 1, 3, 2, 4, 3, 1073741829, 4, 1073741830, 5, 1073741831, 6, 1073741832, 7, 1073741833, 8, 1073741834, 9, 1073741835, 10, 1073741836, 11, 1073741837, 12, 1073741838, 13, 1073741839, 14, 1073741840, 15, 1073741841, 16, 1073741842, 17, 1073741843, 18, 1073741844, 19, 0, 0, 0, 0, 0, -1, 5, 21, 20, 22, 21, 23, 22, 1, 23, 2, 24, 0, 0, 0, 0, 24, -1, 4, 22, 25, 23, 26, 1, 27, 2, 28, 0, 0, 0, 28, 7, -1, 7, 21, 20, 23, 29, 1, 0, 2, 28, 25, 30, 26, 31, 27, 31, 0, 0, 0, 28, 5, -1, 8, 21, 20, 23, 32, 1, 21, 2, 33, 29, 34, 25, 35, 26, 31, 27, 31, 0, 0, 0, 28, 8, -1, 7, 23, 36, 1, 21, 2, 37, 29, 38, 25, 39, 26, 31, 27, 31, 0, 0, 0, 33, 6, -1, 8, 21, 20, 22, 32, 23, 33, 1, 33, 2, 25, 30, 40, 31, 31, 32, 41, 0, 0, 0, 34, 34, -1, 6, 21, 42, 22, 43, 23, 44, 1, 45, 2, 46, 35, 31, 0, 7, 0, 38, 36, -1, 3, 21, 42, 37, 47, 35, 31, 0, 8, 0, 34, 34, -1, 1, 21, 42, 0, 9, 0, 28, 39, -1, 3, 21, 42, 25, 48, 27, 31, 0, 9, 0, 28, 10, -1, 3, 21, 42, 25, 35, 27, 31, 0, 9, 0, 28, 40, -1, 3, 21, 42, 25, 49, 27, 31, 0, 9, 0, 28, 16, -1, 3, 21, 42, 25, 35, 27, 31, 0, 8, 0, 34, 41, -1, 1, 21, 42, 0, 14, 0, 28, 42, -1, 3, 21, 42, 25, 50, 27, 31, 0, 14, 0, 28, 12, -1, 3, 21, 42, 25, 35, 27, 31, 0, 14, 0, 28, 43, -1, 3, 21, 42, 25, 51, 27, 31, 0, 14, 0, 28, 18, -1, 3, 21, 42, 25, 35, 27, 31, 0, 8, 0, 34, 44, -1, 1, 21, 42, 0, 19, 0, 28, 11, -1, 3, 21, 42, 25, 52, 27, 31, 0, 19, 0, 28, 14, -1, 3, 21, 42, 25, 35, 27, 31, 0, 19, 0, 28, 45, -1, 3, 21, 42, 25, 53, 27, 31, 0, 19, 0, 28, 20, -1, 3, 21, 42, 25, 35, 27, 31, 0),
+"variants": [192.0, 264.0, SubResource("StyleBoxFlat_0qw4o"), ExtResource("5_272bh"), NodePath("Rating"), NodePath("Flag"), NodePath("Nickname"), NodePath("Position"), NodePath("VBoxContainer/HBoxContainer2/VBoxContainer/label1"), NodePath("VBoxContainer/HBoxContainer2/VBoxContainer/rating1"), NodePath("VBoxContainer/HBoxContainer2/VBoxContainer2/label2"), NodePath("VBoxContainer/HBoxContainer2/VBoxContainer2/rating2"), NodePath("VBoxContainer/HBoxContainer2/VBoxContainer3/Label2"), NodePath("VBoxContainer/HBoxContainer2/VBoxContainer3/rating3"), NodePath("VBoxContainer/HBoxContainer2/VBoxContainer/label4"), NodePath("VBoxContainer/HBoxContainer2/VBoxContainer/rating4"), NodePath("VBoxContainer/HBoxContainer2/VBoxContainer2/label5"), NodePath("VBoxContainer/HBoxContainer2/VBoxContainer2/rating5"), NodePath("VBoxContainer/HBoxContainer2/VBoxContainer3/label6"), NodePath("VBoxContainer/HBoxContainer2/VBoxContainer3/rating6"), 0, 48.0, 3.0, 144.0, 107.0, 64.0, 104.0, 128.0, 136.0, 112.0, "ADASDASDASDASD", 1, 8.0, 40.0, 23, "100", 56.0, 88.0, 10, "Support", ExtResource("6_5vw27"), 4, 2, 5.0, 152.0, 189.0, 256.0, 15, "MEC", "TEA", "REF", "COM", "ADA", "POT"],
+"version": 3
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2yge"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
+bg_color = Color(0.270588, 0.12549, 0.32549, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+bg_color = Color(0.317647, 0.152941, 0.384314, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mycd"]
+bg_color = Color(0.270588, 0.12549, 0.32549, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
+bg_color = Color(0, 0.388235, 0.529412, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Control" type="Control" node_paths=PackedStringArray("teamNameLabel", "createSeries", "signSponsor")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_ig7tw")
+activationPanelPath = NodePath("OpenPlayersTabButton")
+smallPanelPath = NodePath("PlayersPanel")
+teamNameLabel = NodePath("Label")
+createSeries = NodePath("CreateSERIES")
+signSponsor = NodePath("SignSponsor")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 1
+color = Color(0.0431373, 0.0588235, 0.101961, 1)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -442.0
+offset_right = 155.0
+offset_bottom = -373.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+text = "TEMP TEXT"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 1
+script = ExtResource("2_1bvp3")
+savesContainerPathPlayers = NodePath("ScrollContainer/VBoxContainer")
+saveGameItemScenePlayers = ExtResource("3_h2yge")
+savesContainerPathTeams = NodePath("ScrollContainer2/VBoxContainer")
+saveGameItemSceneTeams = ExtResource("3_h2yge")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 138.0
+offset_right = 668.0
+offset_bottom = 1034.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer2" type="ScrollContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 1260.0
+offset_top = 138.0
+offset_right = 1828.0
+offset_bottom = 1034.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ScrollContainer2"]
+layout_mode = 2
+
+[node name="PlayersPanel" type="Panel" parent="." node_paths=PackedStringArray("savesContainerPlayers", "scrollContainer")]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 192.0
+offset_right = 1624.0
+offset_bottom = 960.0
+script = ExtResource("4_lquwl")
+savesContainerPlayers = NodePath("ScrollContainer/VBoxContainer2")
+scrollContainer = NodePath("ScrollContainer")
+playerProfileScene = SubResource("PackedScene_kek77")
+
+[node name="Label" type="Label" parent="PlayersPanel"]
+layout_mode = 0
+offset_left = 16.0
+offset_right = 383.0
+offset_bottom = 55.0
+mouse_filter = 1
+theme_override_font_sizes/font_size = 40
+text = "SIGMA OMEGA LUL"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PlayersPanel"]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 1320.0
+offset_bottom = 768.0
+mouse_filter = 0
+mouse_force_pass_scroll_events = false
+horizontal_scroll_mode = 0
+script = ExtResource("7_5vw27")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="PlayersPanel/ScrollContainer"]
+layout_mode = 2
+
+[node name="ActivatorPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 184.0
+offset_right = 152.0
+offset_bottom = 336.0
+mouse_filter = 1
+
+[node name="Label" type="Label" parent="ActivatorPanel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 56.0
+offset_right = 97.0
+offset_bottom = 79.0
+mouse_filter = 1
+text = "Players"
+
+[node name="UI_Elements" type="Control" parent="." node_paths=PackedStringArray("NextWeekButton", "PrestiegeLabel", "BudgetLabel", "WeeklyExpense", "CurrentYearAndWeekLabel")]
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+script = ExtResource("4_1bvp3")
+NextWeekButton = NodePath("Button")
+PrestiegeLabel = NodePath("HBoxContainer/Label")
+BudgetLabel = NodePath("HBoxContainer/Label2")
+WeeklyExpense = NodePath("HBoxContainer/Label3")
+CurrentYearAndWeekLabel = NodePath("Label")
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="UI_Elements"]
+layout_mode = 0
+offset_left = 1632.0
+offset_top = 976.0
+offset_right = 1910.0
+offset_bottom = 1069.0
+mouse_filter = 1
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h2yge")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1bvp3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7mycd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_lquwl")
+text = "Next Week"
+
+[node name="Label" type="Label" parent="UI_Elements"]
+layout_mode = 0
+offset_left = 1496.0
+offset_top = 928.0
+offset_right = 1911.0
+offset_bottom = 970.0
+mouse_filter = 1
+theme_override_font_sizes/font_size = 30
+text = "Week 52, Year 2025"
+horizontal_alignment = 2
+text_direction = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI_Elements"]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 1912.0
+offset_bottom = 64.0
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="UI_Elements/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 30
+text = "Prestiege: 100"
+
+[node name="Label2" type="Label" parent="UI_Elements/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 30
+text = "Budget: 1000000000"
+
+[node name="Label3" type="Label" parent="UI_Elements/HBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 30
+text = "Weekly Expense: 1000000"
+
+[node name="OpenPlayersTabButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 336.0
+offset_right = 139.0
+offset_bottom = 367.0
+text = "OPEN PLAYERS"
+
+[node name="CreateSERIES" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 408.0
+offset_right = 147.0
+offset_bottom = 439.0
+text = "CREATE SERIES"
+
+[node name="PlaySERIES" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 480.0
+offset_right = 147.0
+offset_bottom = 511.0
+text = "PLAY SERIES"
+
+[node name="SignSponsor" type="Button" parent="."]
+offset_left = 24.0
+offset_top = 568.0
+offset_right = 147.0
+offset_bottom = 599.0
+text = "Sign Sponsor"

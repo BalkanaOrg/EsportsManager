@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddutr1nkpo0f0"]
+
+[ext_resource type="Script" uid="uid://c3o2wcaetmgrp" path="res://Scripts/MainGame/HelperScenes/TeamLabels.cs" id="1_obu7o"]
+
+[node name="Label" type="Label" node_paths=PackedStringArray("username")]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 30
+text = "TEST LABEL"
+script = ExtResource("1_obu7o")
+username = NodePath(".")

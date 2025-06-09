@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cluq8v3qryiqm"
+path="res://.godot/imported/6 - Days like these.mp3-17aeeee2021527a5bc1d7fafc4b073ab.mp3str"
+
+[deps]
+
+source_file="res://Music/6 - Days like these.mp3"
+dest_files=["res://.godot/imported/6 - Days like these.mp3-17aeeee2021527a5bc1d7fafc4b073ab.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
