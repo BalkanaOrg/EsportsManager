@@ -3,16 +3,36 @@
   "WorkspaceRootPath": "G:\\__BalkanaGames\\esportsmanager\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\scripts\\mainmenu\\factories\\tournamentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:scripts\\mainmenu\\factories\\tournamentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\scripts\\mainmenu\\factories\\sponsorfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:scripts\\mainmenu\\factories\\sponsorfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\scripts\\mainmenu\\factories\\sponsorshipservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:scripts\\mainmenu\\factories\\sponsorshipservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\esportsmanager.data\\models\\sponsorproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:esportsmanager.data\\models\\sponsorproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\scripts\\mainmenu\\factories\\contractservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:scripts\\mainmenu\\factories\\contractservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\scripts\\mainmenu\\factories\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:scripts\\mainmenu\\factories\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\esportsmanager.data\\models\\contractsponsor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:esportsmanager.data\\models\\contractsponsor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\esportsmanager.data\\models\\contractperiodtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:esportsmanager.data\\models\\contractperiodtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\esportsmanager.data\\data\\gamedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -21,10 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\esportsmanager.data\\models\\sponsorship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:esportsmanager.data\\models\\sponsorship.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\scripts\\mainmenu\\factories\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:scripts\\mainmenu\\factories\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\scripts\\mainmenu\\mainmenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,10 +79,6 @@
       "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:esportsmanager.data\\models\\organizationtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\esportsmanager.data\\models\\sponsorproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:esportsmanager.data\\models\\sponsorproduct.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\scripts\\mainmenu\\factories\\playerfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:scripts\\mainmenu\\factories\\playerfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -91,16 +103,8 @@
       "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:esportsmanager.data\\models\\match.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\esportsmanager.data\\models\\contractsponsor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:esportsmanager.data\\models\\contractsponsor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\esportsmanager.data\\models\\contractsponsortype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:esportsmanager.data\\models\\contractsponsortype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\esportsmanager.data\\models\\contractperiodtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:esportsmanager.data\\models\\contractperiodtype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\esportsmanager.data\\models\\person.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -121,10 +125,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\scripts\\mainmenu\\factories\\playerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:scripts\\mainmenu\\factories\\playerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\scripts\\mainmenu\\factories\\tournamentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|solutionrelative:scripts\\mainmenu\\factories\\tournamentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A596B264-D66D-407E-88C5-0608921FC284}|EsportsManager.csproj|g:\\__balkanagames\\esportsmanager\\esportsmanager.data\\models\\series.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -322,13 +322,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SponsorshipService.cs",
-              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\SponsorshipService.cs",
-              "RelativeDocumentMoniker": "Scripts\\MainMenu\\Factories\\SponsorshipService.cs",
-              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\SponsorshipService.cs",
-              "RelativeToolTip": "Scripts\\MainMenu\\Factories\\SponsorshipService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAiAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "ContractService.cs",
+              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\ContractService.cs",
+              "RelativeDocumentMoniker": "Scripts\\MainMenu\\Factories\\ContractService.cs",
+              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\ContractService.cs",
+              "RelativeToolTip": "Scripts\\MainMenu\\Factories\\ContractService.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAADMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-06T09:23:20.648Z",
               "EditorCaption": ""
@@ -341,27 +341,92 @@
               "RelativeDocumentMoniker": "Scripts\\MainMenu\\Factories\\SponsorFactory.cs",
               "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\SponsorFactory.cs",
               "RelativeToolTip": "Scripts\\MainMenu\\Factories\\SponsorFactory.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAhwGkAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAhwB8AAACdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-05T16:09:40.153Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Sponsorship.cs",
-              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\Sponsorship.cs",
-              "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\Sponsorship.cs",
-              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\Sponsorship.cs",
-              "RelativeToolTip": "EsportsManager.Data\\Models\\Sponsorship.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "GameService.cs",
+              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\GameService.cs",
+              "RelativeDocumentMoniker": "Scripts\\MainMenu\\Factories\\GameService.cs",
+              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\GameService.cs",
+              "RelativeToolTip": "Scripts\\MainMenu\\Factories\\GameService.cs",
+              "ViewState": "AgIAAMsAAAAAAAAAAAAAAOMAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-30T17:48:56.083Z",
+              "WhenOpened": "2025-05-27T13:42:34.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Scripts\\GameManager.cs",
+              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\GameManager.cs",
+              "RelativeToolTip": "Scripts\\GameManager.cs",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAFwAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-19T17:26:20.397Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ContractSponsor.cs",
+              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\ContractSponsor.cs",
+              "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\ContractSponsor.cs",
+              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\ContractSponsor.cs",
+              "RelativeToolTip": "EsportsManager.Data\\Models\\ContractSponsor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T15:30:22.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ContractPeriodType.cs",
+              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\ContractPeriodType.cs",
+              "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\ContractPeriodType.cs",
+              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\ContractPeriodType.cs",
+              "RelativeToolTip": "EsportsManager.Data\\Models\\ContractPeriodType.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T15:32:59.672Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "SponsorProduct.cs",
+              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\SponsorProduct.cs",
+              "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\SponsorProduct.cs",
+              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\SponsorProduct.cs",
+              "RelativeToolTip": "EsportsManager.Data\\Models\\SponsorProduct.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-05T15:40:18.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TournamentService.cs",
+              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\TournamentService.cs",
+              "RelativeDocumentMoniker": "Scripts\\MainMenu\\Factories\\TournamentService.cs",
+              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\TournamentService.cs",
+              "RelativeToolTip": "Scripts\\MainMenu\\Factories\\TournamentService.cs",
+              "ViewState": "AgIAADcBAAAAAAAAAAAAAEoBAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-27T13:18:30.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "GameDbContext.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Data\\GameDbContext.cs",
               "RelativeDocumentMoniker": "EsportsManager.Data\\Data\\GameDbContext.cs",
@@ -374,59 +439,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GameService.cs",
-              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\GameService.cs",
-              "RelativeDocumentMoniker": "Scripts\\MainMenu\\Factories\\GameService.cs",
-              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\GameService.cs",
-              "RelativeToolTip": "Scripts\\MainMenu\\Factories\\GameService.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAAADcAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "Sponsorship.cs",
+              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\Sponsorship.cs",
+              "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\Sponsorship.cs",
+              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\Sponsorship.cs",
+              "RelativeToolTip": "EsportsManager.Data\\Models\\Sponsorship.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T13:42:34.516Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GameFactory.cs",
-              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\GameFactory.cs",
-              "RelativeDocumentMoniker": "Scripts\\MainMenu\\Factories\\GameFactory.cs",
-              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\GameFactory.cs",
-              "RelativeToolTip": "Scripts\\MainMenu\\Factories\\GameFactory.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADEAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T20:16:49.931Z",
+              "WhenOpened": "2025-05-30T17:48:56.083Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "GameGenre.cs",
-              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\GameGenre.cs",
-              "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\GameGenre.cs",
-              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\GameGenre.cs",
-              "RelativeToolTip": "EsportsManager.Data\\Models\\GameGenre.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-04T20:45:49.453Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "GameManager.cs",
-              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\GameManager.cs",
-              "RelativeDocumentMoniker": "Scripts\\GameManager.cs",
-              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\GameManager.cs",
-              "RelativeToolTip": "Scripts\\GameManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-19T17:26:20.397Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "MainMenu.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\MainMenu.cs",
               "RelativeDocumentMoniker": "Scripts\\MainMenu\\MainMenu.cs",
@@ -439,7 +465,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
+              "Title": "GameFactory.cs",
+              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\GameFactory.cs",
+              "RelativeDocumentMoniker": "Scripts\\MainMenu\\Factories\\GameFactory.cs",
+              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\GameFactory.cs",
+              "RelativeToolTip": "Scripts\\MainMenu\\Factories\\GameFactory.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAADEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T20:16:49.931Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "GameGenre.cs",
+              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\GameGenre.cs",
+              "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\GameGenre.cs",
+              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\GameGenre.cs",
+              "RelativeToolTip": "EsportsManager.Data\\Models\\GameGenre.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T20:45:49.453Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "Organization.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\Organization.cs",
               "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\Organization.cs",
@@ -452,7 +504,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "TeamFactory.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\TeamFactory.cs",
               "RelativeDocumentMoniker": "Scripts\\MainMenu\\Factories\\TeamFactory.cs",
@@ -465,7 +517,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "GameState.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\GameState.cs",
               "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\GameState.cs",
@@ -478,7 +530,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "SponsorTier.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\SponsorTier.cs",
               "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\SponsorTier.cs",
@@ -491,7 +543,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "OrgFactory.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\OrgFactory.cs",
               "RelativeDocumentMoniker": "Scripts\\MainMenu\\Factories\\OrgFactory.cs",
@@ -504,7 +556,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "OrganizationType.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\OrganizationType.cs",
               "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\OrganizationType.cs",
@@ -517,20 +569,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "SponsorProduct.cs",
-              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\SponsorProduct.cs",
-              "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\SponsorProduct.cs",
-              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\SponsorProduct.cs",
-              "RelativeToolTip": "EsportsManager.Data\\Models\\SponsorProduct.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T15:40:18.26Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "PlayerFactory.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\PlayerFactory.cs",
               "RelativeDocumentMoniker": "Scripts\\MainMenu\\Factories\\PlayerFactory.cs",
@@ -543,7 +582,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "Team.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\Team.cs",
               "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\Team.cs",
@@ -556,7 +595,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "Player.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\Player.cs",
               "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\Player.cs",
@@ -569,7 +608,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "ContractPlayer.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\ContractPlayer.cs",
               "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\ContractPlayer.cs",
@@ -582,7 +621,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "Match_CS.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\Match_CS.cs",
               "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\Match_CS.cs",
@@ -595,7 +634,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "Match.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\Match.cs",
               "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\Match.cs",
@@ -608,20 +647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "ContractSponsor.cs",
-              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\ContractSponsor.cs",
-              "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\ContractSponsor.cs",
-              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\ContractSponsor.cs",
-              "RelativeToolTip": "EsportsManager.Data\\Models\\ContractSponsor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T15:30:22.011Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "ContractSponsorType.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\ContractSponsorType.cs",
               "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\ContractSponsorType.cs",
@@ -634,20 +660,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "ContractPeriodType.cs",
-              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\ContractPeriodType.cs",
-              "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\ContractPeriodType.cs",
-              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\ContractPeriodType.cs",
-              "RelativeToolTip": "EsportsManager.Data\\Models\\ContractPeriodType.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-05T15:32:59.672Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "Contract.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\Contract.cs",
               "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\Contract.cs",
@@ -660,7 +673,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "AIController.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\AIController.cs",
               "RelativeDocumentMoniker": "Scripts\\MainMenu\\Factories\\AIController.cs",
@@ -673,7 +686,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "Game.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\Game.cs",
               "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\Game.cs",
@@ -686,7 +699,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "Person.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\EsportsManager.Data\\Models\\Person.cs",
               "RelativeDocumentMoniker": "EsportsManager.Data\\Models\\Person.cs",
@@ -699,7 +712,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "PlayerService.cs",
               "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\PlayerService.cs",
               "RelativeDocumentMoniker": "Scripts\\MainMenu\\Factories\\PlayerService.cs",
@@ -708,19 +721,6 @@
               "ViewState": "AgIAAIgAAAAAAAAAAAAAAMUAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-05-27T11:31:01.324Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "TournamentService.cs",
-              "DocumentMoniker": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\TournamentService.cs",
-              "RelativeDocumentMoniker": "Scripts\\MainMenu\\Factories\\TournamentService.cs",
-              "ToolTip": "G:\\__BalkanaGames\\esportsmanager\\Scripts\\MainMenu\\Factories\\TournamentService.cs",
-              "RelativeToolTip": "Scripts\\MainMenu\\Factories\\TournamentService.cs",
-              "ViewState": "AgIAAMUAAAAAAAAAAAAAAHgAAABVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T13:18:30.547Z",
               "EditorCaption": ""
             },
             {

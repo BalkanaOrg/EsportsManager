@@ -257,6 +257,7 @@ offset_bottom = 367.0
 text = "OPEN PLAYERS"
 
 [node name="CreateSERIES" type="Button" parent="."]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 408.0
 offset_right = 147.0
@@ -264,6 +265,7 @@ offset_bottom = 439.0
 text = "CREATE SERIES"
 
 [node name="PlaySERIES" type="Button" parent="."]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 480.0
 offset_right = 147.0
@@ -271,6 +273,7 @@ offset_bottom = 511.0
 text = "PLAY SERIES"
 
 [node name="SignSponsor" type="Button" parent="."]
+layout_mode = 0
 offset_left = 24.0
 offset_top = 568.0
 offset_right = 147.0

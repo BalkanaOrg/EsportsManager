@@ -12,3 +12,4 @@ G:\__BalkanaGames\esportsmanager\EsportsManager.Data\obj\Debug\net8.0\refint\Esp
 G:\__BalkanaGames\esportsmanager\EsportsManager.Data\obj\Debug\net8.0\EsportsManager.Data.pdb
 G:\__BalkanaGames\esportsmanager\EsportsManager.Data\obj\Debug\net8.0\EsportsManager.Data.genruntimeconfig.cache
 G:\__BalkanaGames\esportsmanager\EsportsManager.Data\obj\Debug\net8.0\ref\EsportsManager.Data.dll
+G:\__BalkanaGames\esportsmanager\EsportsManager.Data\obj\Debug\net8.0\EsportsManager.Data.sourcelink.json

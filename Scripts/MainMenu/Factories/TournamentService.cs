@@ -17,7 +17,7 @@ namespace EsportsManager.Scripts.MainMenu.Factories
 		private static GameState gameState = GameService.TransferGameState();
 		private static Random random = new Random();
 
-		public static void CreateSeries(Tournament tournament, Team team1, Team team2, int bestOf, string game, int[] schedule)
+        public static void CreateSeries(Tournament tournament, Team team1, Team team2, int bestOf, string game, int[] schedule)
 		{
 			//if (tournament.Series.Any(s => s.TeamAId == team1.Id && s.TeamBId == team2.Id))
 			//{
@@ -139,7 +139,10 @@ namespace EsportsManager.Scripts.MainMenu.Factories
 			var teamAPlayers = match.Series.TeamA.Players.ToList();
 			var teamBPlayers = match.Series.TeamB.Players.ToList();
 
-			int teamARounds = 0;
+            var teamALoadouts = new Dictionary<Guid, List<WeaponType>>();
+            var teamBLoadouts = new Dictionary<Guid, List<WeaponType>>();
+
+            int teamARounds = 0;
 			int teamBRounds = 0;
 
 			// Store team economy
@@ -156,30 +159,33 @@ namespace EsportsManager.Scripts.MainMenu.Factories
 
 				// Simulate round
 				bool teamAWins = SimulateRound(
+					match,
 					teamAPlayers, teamBPlayers,
 					teamAMoney, teamBMoney,
 					match.Map,
 					out List<Player> survivingA,
-					out List<Player> survivingB);
+					out List<Player> survivingB,
+					teamALoadouts,
+					teamBLoadouts);
 
 				if (teamAWins)
 				{
 					teamARounds++;
 					teamALossStreak = 0;
 					teamBLossStreak++;
-					ApplyEconomy(teamAPlayers, teamAMoney, true, 0);
-					ApplyEconomy(teamBPlayers, teamBMoney, false, teamBLossStreak);
+					ApplyEconomy(teamAPlayers, teamAMoney, true, 0, teamALoadouts);
+					ApplyEconomy(teamBPlayers, teamBMoney, false, teamBLossStreak, teamBLoadouts);
 				}
 				else
 				{
 					teamBRounds++;
 					teamBLossStreak = 0;
 					teamALossStreak++;
-					ApplyEconomy(teamBPlayers, teamBMoney, true, 0);
-					ApplyEconomy(teamAPlayers, teamAMoney, false, teamALossStreak);
+					ApplyEconomy(teamBPlayers, teamBMoney, true, 0, teamALoadouts);
+					ApplyEconomy(teamAPlayers, teamAMoney, false, teamALossStreak, teamBLoadouts);
 				}
 
-				UpdateStats(teamAPlayers, teamBPlayers, survivingA, survivingB);
+				UpdateStats(match,teamAPlayers, teamBPlayers, survivingA, survivingB);
 			}
 
 			// Handle overtime
@@ -190,16 +196,19 @@ namespace EsportsManager.Scripts.MainMenu.Factories
 				for (int i = 0; i < MaxOvertimeRounds; i++)
 				{
 					bool teamAWins = SimulateRound(
+						match,
 						teamAPlayers, teamBPlayers,
 						teamAMoney, teamBMoney,
 						match.Map,
 						out List<Player> survivingA,
-						out List<Player> survivingB);
+						out List<Player> survivingB,
+						teamALoadouts,
+						teamBLoadouts);
 
 					if (teamAWins) otA++;
 					else otB++;
 
-					UpdateStats(teamAPlayers, teamBPlayers, survivingA, survivingB);
+					UpdateStats(match,teamAPlayers, teamBPlayers, survivingA, survivingB);
 				}
 
 				if (otA > otB) teamARounds++;
@@ -216,7 +225,12 @@ namespace EsportsManager.Scripts.MainMenu.Factories
 			}
 			match.TeamAScore = teamARounds;
 			match.TeamBScore = teamBRounds;
-
+			foreach (var player in teamAPlayers.Concat(teamBPlayers))
+			{
+				var profile = context.GameProfiles.OfType<GameProfile_CS>()
+					.FirstOrDefault(p => p.PlayerId == player.Id && p.Player.GameStateId == gameState.Id);
+				profile.MapsPlayed++;
+            }
 			context.SaveChanges();
 		}
 		private static double[] MapFactor(Map map)
@@ -268,24 +282,128 @@ namespace EsportsManager.Scripts.MainMenu.Factories
 			};
 		}
 
-		private static bool SimulateRound(List<Player> teamA, List<Player> teamB,
+		private static bool SimulateRound(Match_CS match,List<Player> teamA, List<Player> teamB,
 								  Dictionary<Guid, int> moneyA, Dictionary<Guid, int> moneyB,
 								  Map map,
 								  out List<Player> survivingA,
-								  out List<Player> survivingB)
+								  out List<Player> survivingB,
+                                  Dictionary<Guid, List<WeaponType>> TeamAloadouts,
+                                  Dictionary<Guid, List<WeaponType>> TeamBloadouts)
 		{
-			double teamAScore = CalculateTeamScore(teamA, moneyA, map);
-			double teamBScore = CalculateTeamScore(teamB, moneyB, map);
-			teamAScore += RandomBias();
-			teamBScore += RandomBias();
-			GD.Print($"TeamA: {teamAScore} vs TeamB: {teamBScore}");
+            //double teamAScore = CalculateTeamScore(teamA, moneyA, map, TeamAloadouts);
+            //double teamBScore = CalculateTeamScore(teamB, moneyB, map, TeamBloadouts);
+            //teamAScore += RandomBias();
+            //teamBScore += RandomBias();
+            //GD.Print($"TeamA: {teamAScore} vs TeamB: {teamBScore}");
 
-			bool teamAWins = teamAScore > teamBScore;
+            //bool teamAWins = teamAScore > teamBScore;
 
-			survivingA = teamAWins ? teamA.OrderBy(_ => Guid.NewGuid()).Take(3).ToList() : new List<Player>();
-			survivingB = !teamAWins ? teamB.OrderBy(_ => Guid.NewGuid()).Take(3).ToList() : new List<Player>();
+            //survivingA = teamAWins ? teamA.OrderBy(_ => Guid.NewGuid()).Take(3).ToList() : new List<Player>();
+            //survivingB = !teamAWins ? teamB.OrderBy(_ => Guid.NewGuid()).Take(3).ToList() : new List<Player>();
 
-			return teamAWins;
+            var strengthA = GetCombatants(teamA, moneyA, map, TeamAloadouts);
+            var strengthB = GetCombatants(teamB, moneyB, map, TeamBloadouts);
+
+            survivingA = new List<Player>(teamA);
+            survivingB = new List<Player>(teamB);
+
+            int maxSkirmishes = 20;
+            var killFeed = new List<(Player killer, Player victim, Player? assist)>();
+            for (int i = 0; i < maxSkirmishes; i++)
+            {
+                if (survivingA.Count == 0 || survivingB.Count == 0)
+                    break;
+
+                // Randomly choose group sizes for each side (1 to 3 players)
+                int groupASize = Math.Min(random.Next(1, 4), survivingA.Count);
+                int groupBSize = Math.Min(random.Next(1, 4), survivingB.Count);
+
+                // Pick random players for each group
+                var groupA = PickRandomPlayers(survivingA, groupASize, random);
+                var groupB = PickRandomPlayers(survivingB, groupBSize, random);
+
+                // Calculate combined strength of each group
+                double groupAStrength = groupA.Sum(p => strengthA[p.Id]);
+                double groupBStrength = groupB.Sum(p => strengthB[p.Id]);
+
+                // Add some randomness
+                groupAStrength *= 1 + (random.NextDouble() - 0.5) * 0.2; // ±10%
+                groupBStrength *= 1 + (random.NextDouble() - 0.5) * 0.2;
+
+                // Determine winning side
+                bool aWins = groupAStrength > groupBStrength;
+				var winners = aWins ? groupA : groupB;
+
+                // Calculate casualties on losing side
+                var losers = aWins ? groupB : groupA;
+
+                // Casualties: at least 1, up to half the losing group randomly
+                int casualtiesCount = Math.Max(1, random.Next(1, losers.Count / 2 + 1));
+
+                // Remove casualties from survivors
+                for (int c = 0; c < casualtiesCount; c++)
+                {
+                    var victim = losers[random.Next(losers.Count)];
+                    losers.Remove(victim);
+                    if (aWins)
+                        survivingB.Remove(victim);
+                    else
+                        survivingA.Remove(victim);
+
+                    // Choose killer randomly from winners
+                    var killer = winners[random.Next(winners.Count)];
+
+                    // 30% chance of assist by someone else in the group
+                    Player? assist = null;
+                    if (winners.Count > 1 && random.NextDouble() < 0.3)
+                        assist = winners.Where(p => p != killer).OrderBy(_ => random.Next()).First();
+
+                    killFeed.Add((killer, victim, assist));
+                }
+            }
+
+            foreach (var (killer, victim, assist) in killFeed)
+            {
+                var killerProfile = context.GameProfiles.OfType<GameProfile_CS>().Where(c => c.PlayerId == killer.Id && c.Player.GameStateId == gameState.Id).FirstOrDefault();
+                var killerStats = context.PlayerStats.OfType<PlayerStats_CS>().Where(c => c.PlayerId == killer.Id && c.MatchId == match.Id).FirstOrDefault();
+
+                killerProfile.Kills++;
+                killerProfile.RoundsWithKillsOrAssists++;
+                killerStats.Kills++;
+                killerStats.RoundsWithKillsOrAssists++;
+
+                var victimProfile = context.GameProfiles.OfType<GameProfile_CS>().Where(c => c.PlayerId == victim.Id && c.Player.GameStateId == gameState.Id).FirstOrDefault();
+                var victimStats = context.PlayerStats.OfType<PlayerStats_CS>().Where(c => c.PlayerId == victim.Id && c.MatchId == match.Id).FirstOrDefault();
+
+                victimProfile.Deaths++;
+                victimStats.Deaths++;
+
+                if (assist != null)
+                {
+                    var assistProfile = context.GameProfiles.OfType<GameProfile_CS>().Where(c => c.PlayerId == assist.Id && c.Player.GameStateId == gameState.Id).FirstOrDefault();
+                    var assistStats = context.PlayerStats.OfType<PlayerStats_CS>().Where(c => c.PlayerId == assist.Id && c.MatchId == match.Id).FirstOrDefault();
+
+                    assistProfile.Assists++;
+                    assistProfile.RoundsWithKillsOrAssists++;
+                    assistStats.Assists++;
+                    assistStats.RoundsWithKillsOrAssists++;
+                }
+
+                if (killFeed.Any(k => k.victim == killer))
+                {
+                    victimStats.RoundsTraded++;
+                    victimProfile.RoundsTraded++;
+                }
+            }
+
+
+            bool teamAWins = survivingA.Count > 0;
+
+            // Return surviving players of each team
+            if (!teamAWins) survivingA.Clear();
+            if (teamAWins) survivingB.Clear();
+
+            return teamAWins;
 		}
 
         private static int RandomBias()
@@ -301,7 +419,72 @@ namespace EsportsManager.Scripts.MainMenu.Factories
             return (int)Math.Clamp(randNormal, -149, 149);
         }
 
-        private static double CalculateTeamScore(List<Player> team, Dictionary<Guid, int> money, Map map)
+        private static Dictionary<Guid, double> GetCombatants(
+			List<Player> team,
+			Dictionary<Guid, int> money,
+			Map map,
+			Dictionary<Guid, List<WeaponType>> loadouts)
+        {
+            var dict = new Dictionary<Guid, double>();
+            var factors = MapFactor(map);
+            double FirepowerFactor = factors[0];
+            double TacticsFactor = factors[1];
+            double UtilityFactor = factors[2];
+            double BigGameFactor = factors[3];
+
+            foreach (var player in team)
+            {
+                var profile = context.GameProfiles.OfType<GameProfile_CS>()
+                    .FirstOrDefault(p => p.PlayerId == player.Id && p.Player.GameStateId == gameState.Id);
+
+                double firepower = 1 + profile.Mechanics * 0.1 + profile.Reflexes * 0.1;
+                double clutch = 1 + profile.Adaptability * 0.01 + profile.Consistency;
+                double utility = 1 + profile.Tactics * 0.1 + profile.GameSense * 0.1;
+                double teamWork = 1 + profile.Teamwork * 0.1 + profile.Communication * 0.1;
+
+                // Get player's loadout from the dictionary
+                loadouts.TryGetValue(player.Id, out var playerLoadout);
+
+                double weaponBonus = 0;
+                if (playerLoadout != null)
+                {
+                    foreach (var weapon in playerLoadout)
+                    {
+                        weaponBonus += WeaponValue(weapon);
+                    }
+                }
+                weaponBonus /= 5000; // Normalize weapon value
+
+                double ecoFactor = 0.9 + (money[player.Id] / 16000.0) * 0.2;
+
+                double strength = (firepower * FirepowerFactor + clutch * BigGameFactor + utility + teamWork + weaponBonus) * ecoFactor;
+
+                dict[player.Id] = strength;
+            }
+            return dict;
+        }
+
+        private static double WeaponValue(WeaponType weaponName)
+        {
+            switch (weaponName.ToString().ToLower())
+            {
+                case "awp": return 4750;
+                case "ak47": return 2700;
+                case "m4a1": return 3100;
+                case "usp": return 200;
+                case "p250": return 300;
+                case "knife": return 0; // Knife always available
+                case "grenade": return 300;
+                default: return 1000; // Default average
+            }
+        }
+
+        private static List<Player> PickRandomPlayers(List<Player> players, int count, Random rng)
+        {
+            return players.OrderBy(_ => rng.Next()).Take(count).ToList();
+        }
+
+        private static double CalculateTeamScore(List<Player> team, Dictionary<Guid, int> money, Map map, Dictionary<Guid, List<WeaponType>> loadouts)
 		{
 			double[] factors = MapFactor(map);
 			double 
@@ -318,23 +501,87 @@ namespace EsportsManager.Scripts.MainMenu.Factories
 				double clutch = 1 + profile.Adaptability * 0.01 + profile.Consistency;
 				double utility = 1 + profile.Tactics * 0.1 + profile.GameSense * 0.1;
 				double teamWork = 1 + profile.Teamwork * 0.1 + profile.Communication * 0.1;
-				double ecoFactor = 0.9 + (money[player.Id] / 16000.0)*0*2;
 
-				score += (firepower * FirepowerFactor + clutch * BigGameFactor + utility + teamWork) * ecoFactor;
+                double weaponMultiplier = 1.0;
+                if (loadouts.TryGetValue(player.Id, out var weapons))
+                {
+                    foreach (var w in weapons)
+                    {
+                        weaponMultiplier += w switch
+                        {
+                            WeaponType.Rifle => 0.2,
+                            WeaponType.SMG => 0.1,
+                            WeaponType.Pistol => -0.05,
+                            WeaponType.ArmorLight => 0.05,
+                            WeaponType.ArmorHeavy => 0.08,
+                            WeaponType.Utility => 0.05,
+                            _ => 0
+                        };
+                    }
+                }
+                double ecoFactor = 0.9 + (money[player.Id] / 16000.0) * 0.2;
+
+                score += (firepower * FirepowerFactor + clutch * BigGameFactor + utility + teamWork) * ecoFactor * weaponMultiplier;
 			}
 			return score;
 		}
 
-		private static void ApplyEconomy(List<Player> team, Dictionary<Guid, int> money, bool won, int lossStreak)
+		private enum WeaponType
 		{
-			int bonus = won ? 3250 : Math.Min(1400 + lossStreak * 500, 3400);
-			foreach (var player in team)
-			{
-				money[player.Id] = Math.Min(money[player.Id] + bonus, 16000);
-			}
-		}
+            None,
+            Pistol,
+            SMG,
+            Rifle,
+            ArmorLight,
+            ArmorHeavy,
+            Utility
+        }
 
-		private static void UpdateStats(List<Player> teamA, List<Player> teamB,
+        private static void ApplyEconomy(List<Player> team, Dictionary<Guid, int> money, bool won, int lossStreak, Dictionary<Guid, List<WeaponType>> loadouts)
+        {
+            int bonus = won ? 3250 : Math.Min(1400 + lossStreak * 500, 3400);
+
+            foreach (var player in team)
+            {
+                // Add money
+                money[player.Id] = Math.Min(money[player.Id] + bonus, 16000);
+
+                // Decide what to buy based on money
+                int currentMoney = money[player.Id];
+                var loadout = new List<WeaponType>();
+
+                if (currentMoney >= 5000)
+                {
+                    loadout.Add(WeaponType.Rifle);
+                    loadout.Add(WeaponType.ArmorHeavy);
+                    loadout.Add(WeaponType.Utility);
+                    currentMoney -= 5000;
+                }
+                else if (currentMoney >= 3000)
+                {
+                    loadout.Add(WeaponType.SMG);
+                    loadout.Add(WeaponType.ArmorLight);
+                    currentMoney -= 3000;
+                }
+                else if (currentMoney >= 1500)
+                {
+                    loadout.Add(WeaponType.Pistol);
+                    currentMoney -= 700;
+                }
+                else
+                {
+                    loadout.Add(WeaponType.Pistol); // save round
+                }
+
+                // Store remaining money
+                money[player.Id] = currentMoney;
+
+                // Save loadout
+                loadouts[player.Id] = loadout;
+            }
+        }
+
+        private static void UpdateStats(Match_CS match,List<Player> teamA, List<Player> teamB,
 								List<Player> survivingA, List<Player> survivingB)
 		{
 			Random rng = new();
@@ -344,35 +591,34 @@ namespace EsportsManager.Scripts.MainMenu.Factories
 				var profile = context.GameProfiles.OfType<GameProfile_CS>()
 					.FirstOrDefault(p => p.PlayerId == player.Id && p.Player.GameStateId == gameState.Id);
 				var matchProfile = context.PlayerStats.OfType<PlayerStats_CS>()
-					.FirstOrDefault(ps => ps.PlayerId == player.Id && ps.Match.Series.Tournament.GameStateId == gameState.Id);
-				profile.MapsPlayed++;
+					.FirstOrDefault(ps => ps.PlayerId == player.Id && ps.Match.Id == match.Id);
 				profile.RoundsPlayed++;
 				matchProfile.RoundsPlayed++;
 			}
 
-			foreach (var player in teamA)
-			{
-				var profile = context.GameProfiles.OfType<GameProfile_CS>()
-					.FirstOrDefault(p => p.PlayerId == player.Id && p.Player.GameStateId == gameState.Id);
-				var matchProfile = context.PlayerStats.OfType<PlayerStats_CS>()
-					.FirstOrDefault(ps => ps.PlayerId == player.Id && ps.Match.Series.Tournament.GameStateId == gameState.Id);
-				if (rng.NextDouble() < 0.5) { profile.Kills++; profile.RoundsWithKillsOrAssists++; matchProfile.Kills++; matchProfile.RoundsWithKillsOrAssists++; }
-				if (rng.NextDouble() < 0.3) { profile.Assists++; matchProfile.Assists++; profile.RoundsWithKillsOrAssists++; matchProfile.RoundsWithKillsOrAssists++; }
-				if (!survivingA.Contains(player)) { profile.Deaths++; matchProfile.Deaths++; }
-				else { profile.RoundsSurvived++; matchProfile.RoundsSurvived++; }
-			}
+			//foreach (var player in teamA)
+			//{
+			//	var profile = context.GameProfiles.OfType<GameProfile_CS>()
+			//		.FirstOrDefault(p => p.PlayerId == player.Id && p.Player.GameStateId == gameState.Id);
+			//	var matchProfile = context.PlayerStats.OfType<PlayerStats_CS>()
+			//		.FirstOrDefault(ps => ps.PlayerId == player.Id && ps.Match.Id == match.Id);
+			//	if (rng.NextDouble() < 0.5) { profile.Kills++; profile.RoundsWithKillsOrAssists++; matchProfile.Kills++; matchProfile.RoundsWithKillsOrAssists++; }
+			//	if (rng.NextDouble() < 0.3) { profile.Assists++; matchProfile.Assists++; profile.RoundsWithKillsOrAssists++; matchProfile.RoundsWithKillsOrAssists++; }
+			//	if (!survivingA.Contains(player)) { profile.Deaths++; matchProfile.Deaths++; }
+			//	else { profile.RoundsSurvived++; matchProfile.RoundsSurvived++; }
+			//}
 
-			foreach (var player in teamB)
-			{
-				var profile = context.GameProfiles.OfType<GameProfile_CS>()
-					.FirstOrDefault(p => p.PlayerId == player.Id && p.Player.GameStateId == gameState.Id);
-				var matchProfile = context.PlayerStats.OfType<PlayerStats_CS>()
-					.FirstOrDefault(ps => ps.PlayerId == player.Id && ps.Match.Series.Tournament.GameStateId == gameState.Id);
-				if (rng.NextDouble() < 0.5) { profile.Kills++; profile.RoundsWithKillsOrAssists++; matchProfile.Kills++; matchProfile.RoundsWithKillsOrAssists++; }
-				if (rng.NextDouble() < 0.3) { profile.Assists++; matchProfile.Assists++; profile.RoundsWithKillsOrAssists++; matchProfile.RoundsWithKillsOrAssists++; }
-				if (!survivingA.Contains(player)) { profile.Deaths++; matchProfile.Deaths++; }
-				else { profile.RoundsSurvived++; matchProfile.RoundsSurvived++; }
-			}
+			//foreach (var player in teamB)
+			//{
+			//	var profile = context.GameProfiles.OfType<GameProfile_CS>()
+			//		.FirstOrDefault(p => p.PlayerId == player.Id && p.Player.GameStateId == gameState.Id);
+			//	var matchProfile = context.PlayerStats.OfType<PlayerStats_CS>()
+			//		.FirstOrDefault(ps => ps.PlayerId == player.Id && ps.Match.Id == match.Id);
+			//	if (rng.NextDouble() < 0.5) { profile.Kills++; profile.RoundsWithKillsOrAssists++; matchProfile.Kills++; matchProfile.RoundsWithKillsOrAssists++; }
+			//	if (rng.NextDouble() < 0.3) { profile.Assists++; matchProfile.Assists++; profile.RoundsWithKillsOrAssists++; matchProfile.RoundsWithKillsOrAssists++; }
+			//	if (!survivingA.Contains(player)) { profile.Deaths++; matchProfile.Deaths++; }
+			//	else { profile.RoundsSurvived++; matchProfile.RoundsSurvived++; }
+			//}
 		}
 
 		private static List<string> DefineMapPool(string game)
