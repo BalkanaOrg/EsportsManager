@@ -18,6 +18,7 @@ namespace EsportsManager.EsportsManager.Data.Models
         public double SigningBonus { get; set; } = 0;
         public double Buyout { get; set; } = 0;
         public double BenchedSalary { get; set; } = 0;
+        public double PrizePoolPercent { get; set; } = 0;
 
         public bool canBeBenched { get; set; } = true;
         public bool canBeSold { get; set; } = true;

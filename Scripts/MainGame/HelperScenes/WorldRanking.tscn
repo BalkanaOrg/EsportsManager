@@ -1,0 +1,147 @@
+[gd_scene load_steps=13 format=3 uid="uid://do0dhlv1g15xs"]
+
+[ext_resource type="Script" uid="uid://c5o44675qj0jw" path="res://Scripts/MainGame/HelperScenes/WorldRanking.cs" id="1_ukvoo"]
+[ext_resource type="PackedScene" uid="uid://b4neuuxmvcl3h" path="res://Scripts/MainGame/HelperScenes/TeamInWorldRanking.tscn" id="2_8lm5s"]
+[ext_resource type="PackedScene" uid="uid://flaleyet48q0" path="res://Scripts/MainGame/HelperScenes/TeamProfile.tscn" id="3_tv8j1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkbda"]
+bg_color = Color(0.0431373, 0.0588235, 0.101961, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.117647, 0.164706, 0.227451, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ukvoo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8lm5s"]
+bg_color = Color(0.218191, 0.0180165, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tv8j1"]
+bg_color = Color(0.17126, 0.0123192, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7u3c"]
+bg_color = Color(0.270588, 0.027451, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7aa0"]
+bg_color = Color(0.0431373, 0.0588235, 0.101961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.117647, 0.164706, 0.227451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kkcl4"]
+bg_color = Color(0.0431373, 0.0588235, 0.101961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.117647, 0.164706, 0.227451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rihou"]
+bg_color = Color(0.0431373, 0.0588235, 0.101961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.117647, 0.164706, 0.227451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mxfb"]
+bg_color = Color(0.0431373, 0.0588235, 0.101961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.117647, 0.164706, 0.227451, 1)
+
+[node name="Control" type="Control" node_paths=PackedStringArray("Panel", "gameFilter", "WorldRankingLabel", "ClosePanelButton", "WorldRankingContainer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_ukvoo")
+Panel = NodePath(".")
+WorldRankingTeam = ExtResource("2_8lm5s")
+TeamProfile = ExtResource("3_tv8j1")
+gameFilter = NodePath("HBoxContainer/OptionButton2")
+WorldRankingLabel = NodePath("HBoxContainer/Label")
+ClosePanelButton = NodePath("btnCloseScreen")
+WorldRankingContainer = NodePath("ScrollContainer/VBoxContainer")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -724.0
+offset_top = -396.0
+offset_right = 724.0
+offset_bottom = 396.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xkbda")
+metadata/_edit_lock_ = true
+
+[node name="btnCloseScreen" type="Button" parent="."]
+offset_left = 1635.0
+offset_top = 154.0
+offset_right = 1675.0
+offset_bottom = 196.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ukvoo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8lm5s")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tv8j1")
+theme_override_styles/normal = SubResource("StyleBoxFlat_d7u3c")
+text = "X"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 160.0
+offset_right = 973.0
+offset_bottom = 215.0
+theme_override_constants/separation = 20
+
+[node name="OptionButton2" type="OptionButton" parent="HBoxContainer"]
+custom_minimum_size = Vector2(72.325, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "Select a game to display the World Leaderboard"
+theme_override_constants/h_separation = 55
+theme_override_font_sizes/font_size = 40
+theme_override_styles/focus = SubResource("StyleBoxFlat_f7aa0")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kkcl4")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rihou")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0mxfb")
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "World Ranking for Counter-Strike"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(1400, 680)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -700.0
+offset_top = -308.0
+offset_right = 700.0
+offset_bottom = 372.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(1400, 680)
+layout_mode = 2
+size_flags_vertical = 3

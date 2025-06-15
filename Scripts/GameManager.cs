@@ -20,10 +20,16 @@ public partial class GameManager : Node
     Button activationPanel;
     Panel smallPanel;
 
+    [Export] Button WorldRankingButton;
+    [Export] Control WorldRankingPanel;
+    [Export] Button PlayersPageButton;
+
     [Export] Label teamNameLabel;
     [Export] Button createSeries;
     [Export] Button playSeries;
     [Export] Button signSponsor;
+
+    [Export] PackedScene TeamProfile;
 
     public override void _Ready()
     {
@@ -68,6 +74,8 @@ public partial class GameManager : Node
         createSeries.Pressed+=CreateSeries;
         signSponsor.Pressed+=SignSponsor;
 
+        WorldRankingButton.Pressed += WorldRankingPage;
+
     }
     private void OnHoverAreaEntered()
     {
@@ -111,6 +119,19 @@ public partial class GameManager : Node
     {
         return GameService.LoadDataBaseInformation();
     }
+
+    public void WorldRankingPage()
+    {
+        if(WorldRankingPanel.Visible)
+        {
+            WorldRankingPanel.Visible = false;
+        }
+        else
+        {
+            WorldRankingPanel.Visible = true;
+        }
+    }
+
 
     private void SeedIfNeeded()
     {

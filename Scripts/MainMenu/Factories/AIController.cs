@@ -116,7 +116,7 @@ namespace EsportsManager.Scripts.MainMenu.Factories
                 double offeredSalary = agent.ExpectedSalary * 1.1;
                 int[] contractDuration = { gameState.CurrentYear + 1, gameState.CurrentWeek };
 
-                if (ShouldPlayerAcceptContract(agent, team, offeredSalary, contractDuration))
+                if (ShouldPlayerAcceptContract(team, agent, 0, offeredSalary, 20, 0,0, true, true, true, contractDuration))
                 {
                     compatiblePlayers.Add(agent);
                     //GD.Print($"Suitable Free Agent Found: {agent.FullName} - Role: {profile.Role}");
@@ -175,11 +175,10 @@ namespace EsportsManager.Scripts.MainMenu.Factories
             else return false;
         }
 
-        private static bool ShouldPlayerAcceptContract(Player player, Team team, double salary, int[] contractDuration)
+        public static bool ShouldPlayerAcceptContract(Team team, Player player, double buyout, double salary, double benchedSalary, double signingBonus, double prizePool, bool canBeTraded, bool canBeBenched, bool mustHaveConsent, int[] contractDuration)
         {
-            if (salary < player.ExpectedSalary)
-                return false;
-
+            double acceptance = 0;
+            double baseAcceptance = (player.Rating * 1.2 * player.Age * 0.1);
             int endYear = contractDuration[0];
             int endWeek = contractDuration[1];
             int currentYear = gameState.CurrentYear;
@@ -187,9 +186,31 @@ namespace EsportsManager.Scripts.MainMenu.Factories
 
             int totalWeeks = (endYear - currentYear) * 52 + (endWeek - currentWeek);
 
+            //Is salary enough
+            if (salary >= player.ExpectedSalary)
+            {
+                acceptance += (salary/player.ExpectedSalary)*10;
+            }
+            //Is buyout too high
+            if(buyout > player.ExpectedSalary*20)
+            {
+                acceptance -= (buyout/player.ExpectedSalary);
+            }
+            else
+            {
+                acceptance += 10;
+            }
+            //Signing bonus to sweeten the deal
+            if(signingBonus>0)
+            {
+                acceptance += signingBonus / 150;
+            }
+
+            if (ContractService.IsTeamSingleNational(team)) acceptance += 20;
+
             // Reject too-long contracts
             if (totalWeeks > 104 && player.Age < 26) // >2 years
-                return false;
+                acceptance-=30;
 
             // High-rating players want top 10 teams
             if (player.Rating > 75)
@@ -197,16 +218,97 @@ namespace EsportsManager.Scripts.MainMenu.Factories
                 if (player.Team == null)
                 {
                     if (team.WorldRanking > 10)
-                        return false;
+                        acceptance-=30;
                 }
                 else
                 {
-                    if (team.WorldRanking > 10 && player.Team.WorldRanking <= 20)
-                        return false;
+                    if (team.WorldRanking > 10 && (player.Team.WorldRanking != null && player.Team.WorldRanking <= 20 && player.Team.WorldRanking!=0))
+                        acceptance -= 30;
                 }
             }
 
-            return true;
+            if(prizePool > 0)
+            {
+                acceptance += prizePool;
+            }
+            else
+            {
+                acceptance -= 10;
+            }
+
+            if (mustHaveConsent) acceptance += 20;
+            if (canBeTraded) acceptance += 20;
+            if (canBeBenched) acceptance -= 20;
+
+            acceptance += team.Prestige / 10;
+
+            GD.Print("Acceptance: " + acceptance.ToString());
+            GD.Print("Base acceptance: " + baseAcceptance.ToString());
+            if (acceptance > baseAcceptance) return true;
+            else return false;
+        }
+        public static bool ShouldTeamAcceptBuyout(Team team, Player player, Team buyer, double buyout, bool doesPlayerWantToSign)
+        {
+            double acceptance = 0;
+            var teamPlayers = context.Players.Where(p => p.TeamId == team.Id && p.GameStateId == team.GameStateId).OrderByDescending(c => c.Rating).ToList();
+            for (int i = 0; i < teamPlayers.Count; i++)
+            {
+                if (teamPlayers[i] == player)
+                {
+                    switch (i)
+                    {
+                        case 0:
+                            acceptance -= 50;
+                            break;
+                        case 1:
+                            acceptance -= 30;
+                            break;
+                        case 2:
+                            acceptance -= 10;
+                            break;
+                    }
+                }
+            }
+
+            if (buyout >= player.Buyout)
+            {
+                double buyoutAboveExpectation = (buyout - player.Buyout) / 100;
+                acceptance += buyoutAboveExpectation;
+            }
+
+            int[] date = ContractService.ReturnDate([gameState.CurrentYear, gameState.CurrentWeek], 26);
+            var result = context.Series
+                .Where(s =>
+                    ((s.TeamAId == team.Id && s.TeamBId == buyer.Id) ||
+                    (s.TeamAId == buyer.Id && s.TeamBId == team.Id)) && (s.Schedule[0] >= date[0] && s.Schedule[1] >= date[1])).DefaultIfEmpty()
+                .ToList();
+            if(result.Count >=0 && result.Count < 2)
+            {
+                acceptance += 20;
+            }
+            else if(result.Count>=10)
+            {
+                acceptance -= 30;
+            }
+            else
+            {
+                acceptance -= 10;
+            }
+
+            if (team.WorldRanking + 10 > buyer.WorldRanking)
+            {
+                acceptance += 10;
+            }
+            else if (team.WorldRanking < buyer.WorldRanking)
+            {
+                acceptance -= 10;
+            }
+
+
+            if (doesPlayerWantToSign) acceptance += 20;
+            GD.Print("Team Acceptance: " + acceptance.ToString());
+            if (acceptance > 50) return true;
+            else return false;
         }
     }
 }

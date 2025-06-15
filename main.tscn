@@ -1,13 +1,16 @@
-[gd_scene load_steps=16 format=3 uid="uid://ciquwl8380tvk"]
+[gd_scene load_steps=19 format=3 uid="uid://ciquwl8380tvk"]
 
 [ext_resource type="Script" uid="uid://mhjv03qbjidc" path="res://Scripts/GameManager.cs" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://btmj7msmu8dg0" path="res://Scripts/MainGame/TestPanel.cs" id="2_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://flaleyet48q0" path="res://Scripts/MainGame/HelperScenes/TeamProfile.tscn" id="2_efxa6"]
 [ext_resource type="PackedScene" uid="uid://ddutr1nkpo0f0" path="res://Scripts/MainGame/HelperScenes/TeamLabels.tscn" id="3_h2yge"]
 [ext_resource type="Script" uid="uid://conp1u2d77ipx" path="res://Scripts/MainGame/UIElements.cs" id="4_1bvp3"]
 [ext_resource type="Script" uid="uid://dhrgj5pgm87w7" path="res://Scripts/MainGame/LoadPlayersList.cs" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://do4ysyyxa6jwq" path="res://Scripts/MainGame/HelperScenes/PlayerProfile.cs" id="5_272bh"]
 [ext_resource type="Texture2D" uid="uid://yga2i047y5nf" path="res://Images/CountryFlags/flag_placeholder.png" id="6_5vw27"]
 [ext_resource type="Script" uid="uid://d0rpe1g5be3aa" path="res://ScrollContainer.cs" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://cysbwa4mlgayf" path="res://Scripts/MainGame/HelperScenes/PlayerBuyout.tscn" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://do0dhlv1g15xs" path="res://Scripts/MainGame/HelperScenes/WorldRanking.tscn" id="10_4c57u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0qw4o"]
 bg_color = Color(0.0431373, 0.0588235, 0.101961, 1)
@@ -60,7 +63,7 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
-[node name="Control" type="Control" node_paths=PackedStringArray("teamNameLabel", "createSeries", "signSponsor")]
+[node name="Control" type="Control" node_paths=PackedStringArray("WorldRankingButton", "WorldRankingPanel", "teamNameLabel", "createSeries", "signSponsor")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -71,9 +74,12 @@ mouse_filter = 1
 script = ExtResource("1_ig7tw")
 activationPanelPath = NodePath("OpenPlayersTabButton")
 smallPanelPath = NodePath("PlayersPanel")
+WorldRankingButton = NodePath("OpenWorldRanking")
+WorldRankingPanel = NodePath("WorldRanking")
 teamNameLabel = NodePath("Label")
 createSeries = NodePath("CreateSERIES")
 signSponsor = NodePath("SignSponsor")
+TeamProfile = ExtResource("2_efxa6")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -134,6 +140,7 @@ offset_bottom = 1034.0
 layout_mode = 2
 
 [node name="PlayersPanel" type="Panel" parent="." node_paths=PackedStringArray("savesContainerPlayers", "scrollContainer")]
+visible = false
 layout_mode = 0
 offset_left = 280.0
 offset_top = 192.0
@@ -256,6 +263,13 @@ offset_right = 139.0
 offset_bottom = 367.0
 text = "OPEN PLAYERS"
 
+[node name="OpenWorldRanking" type="Button" parent="."]
+offset_left = 16.0
+offset_top = 376.0
+offset_right = 185.0
+offset_bottom = 407.0
+text = "OPEN World Ranking"
+
 [node name="CreateSERIES" type="Button" parent="."]
 layout_mode = 0
 offset_left = 24.0
@@ -279,3 +293,18 @@ offset_top = 568.0
 offset_right = 147.0
 offset_bottom = 599.0
 text = "Sign Sponsor"
+
+[node name="BuyoutTest" parent="." instance=ExtResource("9_kek77")]
+visible = false
+layout_mode = 1
+
+[node name="WorldRanking" parent="." instance=ExtResource("10_4c57u")]
+visible = false
+layout_mode = 1
+
+[node name="OpenedPanels" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2

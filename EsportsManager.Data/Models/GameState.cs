@@ -40,6 +40,7 @@ namespace EsportsManager.EsportsManager.Data.Models
         public List<Manager> Managers { get; set; } = new();
         public List<Map> Maps { get; set; } = new();
         public List<Sponsorship> Sponsors {  get; set; } = new();
+        public List<Event> Events {  get; set; } = new();
 
         [NotMapped]
         public List<Map> MapPool => Maps.Where(m => m.isActive).DefaultIfEmpty().ToList();

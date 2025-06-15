@@ -25,6 +25,7 @@ public class GameDbContext : DbContext
     public DbSet<VRSRanking> VRSRankings { get; set; }
     public DbSet<Contract> Contracts { get; set; }
     public DbSet<Sponsorship> Sponsors { get; set; }
+    public DbSet<Event> Events { get; set; }
 
 
     private readonly string _dbPath;
@@ -69,6 +70,12 @@ public class GameDbContext : DbContext
                 .HasColumnType("TEXT")
                 .IsRequired(false);
         });
+
+        modelBuilder.Entity<Event>()
+            .HasOne(c => c.GameState)
+            .WithMany(gs => gs.Events)
+            .HasForeignKey(c => c.GameStateId)
+            .OnDelete(DeleteBehavior.Cascade);
 
 
 

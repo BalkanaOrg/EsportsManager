@@ -1,0 +1,496 @@
+[gd_scene load_steps=15 format=3 uid="uid://cysbwa4mlgayf"]
+
+[ext_resource type="Script" uid="uid://bnwuxf8w65tkt" path="res://Scripts/MainGame/HelperScenes/PlayerBuyout.cs" id="1_gq404"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuxip"]
+bg_color = Color(0.0431373, 0.0588235, 0.101961, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.117647, 0.164706, 0.227451, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kuxip"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jj137"]
+bg_color = Color(0.218191, 0.0180165, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bidbd"]
+bg_color = Color(0.17126, 0.0123192, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gq404"]
+bg_color = Color(0.270588, 0.027451, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6m6oq"]
+bg_color = Color(0.0707535, 0.117324, 0.203568, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v8rrl"]
+bg_color = Color(0.160195, 0.239706, 0.382731, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3nlla"]
+bg_color = Color(0.128786, 0.196181, 0.320923, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gq404"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hmamw"]
+bg_color = Color(0.0431373, 0.0588235, 0.101961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.117647, 0.164706, 0.227451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjw0d"]
+bg_color = Color(0.0431373, 0.0588235, 0.101961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.117647, 0.164706, 0.227451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_en5uq"]
+bg_color = Color(0.0431373, 0.0588235, 0.101961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.117647, 0.164706, 0.227451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_napfe"]
+bg_color = Color(0.0431373, 0.0588235, 0.101961, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.117647, 0.164706, 0.227451, 1)
+
+[node name="Control" type="Control" node_paths=PackedStringArray("CloseWindowButton", "SalarySlider", "BuyoutSlider", "BonusSlider", "PrizePoolSlider", "SalaryLabel", "BuyoutLabel", "BonusLabel", "PrizePoolLabel", "PlayerName", "PlayerAge", "TeamName", "WorldRanking", "PlayerAcceptance", "TeamAcceptance", "yearDropdown", "weekDropdown", "CanBeBenchedCheckBox", "CanBeSoldCheckBox", "MustHaveConsentCheckBox", "SubmitButton")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_gq404")
+CloseWindowButton = NodePath("btnCloseScreen")
+SalarySlider = NodePath("Control/SalarySlider")
+BuyoutSlider = NodePath("Control2/BuyoutSlider")
+BonusSlider = NodePath("Control3/BonusSlider")
+PrizePoolSlider = NodePath("Control4/PrizePoolSlider")
+SalaryLabel = NodePath("Control/lblSalary")
+BuyoutLabel = NodePath("Control2/lblBuyout")
+BonusLabel = NodePath("Control3/lblBonus")
+PrizePoolLabel = NodePath("Control4/lblPrizePool")
+PlayerName = NodePath("PlayerName")
+PlayerAge = NodePath("playerAge")
+TeamName = NodePath("TeamName")
+WorldRanking = NodePath("WorldRanking")
+PlayerAcceptance = NodePath("PlayerAcceptance")
+TeamAcceptance = NodePath("TeamAcceptance")
+yearDropdown = NodePath("ContractExpiration/HBoxContainer2/VBoxContainer/OptionButton")
+weekDropdown = NodePath("ContractExpiration/HBoxContainer2/VBoxContainer/OptionButton2")
+CanBeBenchedCheckBox = NodePath("Checkboxes/CanBeBenched")
+CanBeSoldCheckBox = NodePath("Checkboxes/CanBeSold")
+MustHaveConsentCheckBox = NodePath("Checkboxes/MustHaveConsent")
+SubmitButton = NodePath("Button")
+metadata/_edit_lock_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -724.0
+offset_top = -396.0
+offset_right = 724.0
+offset_bottom = 396.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_kuxip")
+metadata/_edit_lock_ = true
+
+[node name="btnCloseScreen" type="Button" parent="."]
+layout_mode = 2
+offset_left = 1635.0
+offset_top = 154.0
+offset_right = 1675.0
+offset_bottom = 196.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_kuxip")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jj137")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_bidbd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gq404")
+text = "X"
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 887.0
+offset_top = 189.0
+offset_right = 993.0
+offset_bottom = 239.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Salary"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblSalary" type="Label" parent="Control"]
+custom_minimum_size = Vector2(62.72, 0)
+offset_left = 1304.0
+offset_top = 248.0
+offset_right = 1408.0
+offset_bottom = 287.0
+theme_override_font_sizes/font_size = 28
+text = "999999"
+vertical_alignment = 1
+
+[node name="SalarySlider" type="HSlider" parent="Control"]
+custom_minimum_size = Vector2(66.93, 0)
+offset_left = 608.0
+offset_top = 240.0
+offset_right = 1296.0
+offset_bottom = 296.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_6m6oq")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_v8rrl")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_3nlla")
+max_value = 10000.0
+step = 50.0
+value = 10000.0
+
+[node name="Control2" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 877.5
+offset_top = 263.0
+offset_right = 1002.5
+offset_bottom = 313.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Buyout"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblBuyout" type="Label" parent="Control2"]
+custom_minimum_size = Vector2(62.72, 0)
+offset_left = 1304.0
+offset_top = 322.0
+offset_right = 1408.0
+offset_bottom = 361.0
+theme_override_font_sizes/font_size = 28
+text = "999999"
+vertical_alignment = 1
+
+[node name="BuyoutSlider" type="HSlider" parent="Control2"]
+custom_minimum_size = Vector2(66.93, 0)
+offset_left = 608.0
+offset_top = 314.0
+offset_right = 1296.0
+offset_bottom = 370.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_6m6oq")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_v8rrl")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_3nlla")
+max_value = 10000.0
+step = 50.0
+value = 10000.0
+
+[node name="Control3" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 818.0
+offset_top = 343.0
+offset_right = 1062.0
+offset_bottom = 393.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Signing Bonus"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblBonus" type="Label" parent="Control3"]
+custom_minimum_size = Vector2(62.72, 0)
+offset_left = 1304.0
+offset_top = 402.0
+offset_right = 1408.0
+offset_bottom = 441.0
+theme_override_font_sizes/font_size = 28
+text = "999999"
+vertical_alignment = 1
+
+[node name="BonusSlider" type="HSlider" parent="Control3"]
+custom_minimum_size = Vector2(66.93, 0)
+offset_left = 608.0
+offset_top = 394.0
+offset_right = 1296.0
+offset_bottom = 450.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_6m6oq")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_v8rrl")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_3nlla")
+max_value = 10000.0
+step = 50.0
+value = 10000.0
+
+[node name="Control4" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 834.0
+offset_top = 423.0
+offset_right = 1046.0
+offset_bottom = 473.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+text = "Prize Pool %"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lblPrizePool" type="Label" parent="Control4"]
+custom_minimum_size = Vector2(62.72, 0)
+offset_left = 1304.0
+offset_top = 473.0
+offset_right = 1408.0
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 28
+text = "999999"
+vertical_alignment = 1
+
+[node name="PrizePoolSlider" type="HSlider" parent="Control4"]
+custom_minimum_size = Vector2(66.93, 0)
+offset_left = 608.0
+offset_top = 465.0
+offset_right = 1296.0
+offset_bottom = 521.0
+theme_override_styles/slider = SubResource("StyleBoxFlat_6m6oq")
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_v8rrl")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_3nlla")
+value = 50.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 888.0
+offset_top = 736.0
+offset_right = 1000.0
+offset_bottom = 767.0
+text = "Sign Contract"
+
+[node name="Checkboxes" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 980.0
+offset_top = 544.0
+offset_right = 1020.0
+offset_bottom = 584.0
+
+[node name="CanBeBenched" type="CheckBox" parent="Checkboxes"]
+offset_left = -363.0
+offset_top = -16.0
+offset_right = -103.0
+offset_bottom = 34.0
+tooltip_text = "Can the player be benched while under contract"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gq404")
+button_pressed = true
+text = "Can be benched"
+
+[node name="CanBeSold" type="CheckBox" parent="Checkboxes"]
+offset_left = -363.0
+offset_top = 32.0
+offset_right = -103.0
+offset_bottom = 82.0
+tooltip_text = "Can the player be benched while under contract"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gq404")
+button_pressed = true
+text = "Can be sold"
+
+[node name="MustHaveConsent" type="CheckBox" parent="Checkboxes"]
+offset_left = -363.0
+offset_top = 80.0
+offset_right = -61.0
+offset_bottom = 130.0
+tooltip_text = "Can the player be benched while under contract"
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gq404")
+button_pressed = true
+text = "Must have consent"
+
+[node name="ContractExpiration" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="ContractExpiration"]
+offset_left = 980.0
+offset_top = 544.0
+offset_right = 1131.0
+offset_bottom = 567.0
+text = "Contract Expiration"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="ContractExpiration"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 958.0
+offset_top = 549.0
+offset_right = 1258.0
+offset_bottom = 599.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ContractExpiration/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ContractExpiration/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "Year"
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="ContractExpiration/HBoxContainer2/VBoxContainer2"]
+layout_mode = 2
+text = "Month"
+horizontal_alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ContractExpiration/HBoxContainer2"]
+custom_minimum_size = Vector2(91.27, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="OptionButton" type="OptionButton" parent="ContractExpiration/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxFlat_hmamw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kjw0d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_en5uq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_napfe")
+alignment = 1
+
+[node name="OptionButton2" type="OptionButton" parent="ContractExpiration/HBoxContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/focus = SubResource("StyleBoxFlat_hmamw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kjw0d")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_en5uq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_napfe")
+alignment = 1
+
+[node name="TeamName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 312.0
+offset_right = 500.0
+offset_bottom = 362.0
+theme_override_font_sizes/font_size = 36
+text = "TEAM NAME"
+
+[node name="WorldRanking" type="Label" parent="."]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 376.0
+offset_right = 556.0
+offset_bottom = 426.0
+theme_override_font_sizes/font_size = 36
+text = "#999"
+
+[node name="PlayerName" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1288.0
+offset_top = 560.0
+offset_right = 1627.0
+offset_bottom = 610.0
+theme_override_font_sizes/font_size = 36
+text = "PLAYER FULL NAME"
+
+[node name="playerAge" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1384.0
+offset_top = 624.0
+offset_right = 1596.0
+offset_bottom = 674.0
+theme_override_font_sizes/font_size = 36
+text = "AGE"
+
+[node name="TeamAcceptance" type="Label" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 752.0
+offset_right = 632.0
+offset_bottom = 802.0
+theme_override_font_sizes/font_size = 36
+text = "Should Team Accept"
+
+[node name="PlayerAcceptance" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1264.0
+offset_top = 736.0
+offset_right = 1616.0
+offset_bottom = 786.0
+theme_override_font_sizes/font_size = 36
+text = "Should Player Accept"

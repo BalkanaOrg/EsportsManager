@@ -1,0 +1,115 @@
+[gd_scene load_steps=8 format=3 uid="uid://flaleyet48q0"]
+
+[ext_resource type="Script" uid="uid://qns0k2ogbv0" path="res://Scripts/MainGame/HelperScenes/TeamProfile.cs" id="1_ihwsq"]
+[ext_resource type="PackedScene" uid="uid://bekbvfsctf6so" path="res://Scripts/MainGame/HelperScenes/PlayerProfile.tscn" id="2_5skh0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5skh0"]
+bg_color = Color(0.0431373, 0.0588235, 0.101961, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.117647, 0.164706, 0.227451, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ihwsq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbuql"]
+bg_color = Color(0.218191, 0.0180165, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wkdy8"]
+bg_color = Color(0.17126, 0.0123192, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q54ga"]
+bg_color = Color(0.270588, 0.027451, 0, 1)
+
+[node name="Control" type="Control" node_paths=PackedStringArray("TeamName", "WorldRanking", "Region", "Game", "ButtonClose", "TeamMainPlayers")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ihwsq")
+TeamName = NodePath("HBoxContainer/TeamName")
+WorldRanking = NodePath("HBoxContainer/WorldRank")
+Region = NodePath("HBoxContainer/Region")
+Game = NodePath("HBoxContainer/Game")
+ButtonClose = NodePath("btnCloseScreen")
+TeamMainPlayers = NodePath("ScrollContainer/HBoxContainer")
+playerProfileScene = ExtResource("2_5skh0")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -724.0
+offset_top = -396.0
+offset_right = 724.0
+offset_bottom = 396.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5skh0")
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 160.0
+offset_right = 400.0
+offset_bottom = 200.0
+
+[node name="WorldRank" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "#999"
+
+[node name="TeamName" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "TEAM LONG NAME"
+
+[node name="Region" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "REGION"
+
+[node name="Game" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "GAME"
+
+[node name="btnCloseScreen" type="Button" parent="."]
+offset_left = 1635.0
+offset_top = 154.0
+offset_right = 1675.0
+offset_bottom = 196.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ihwsq")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qbuql")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wkdy8")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q54ga")
+text = "X"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -708.0
+offset_top = -284.0
+offset_right = 708.0
+offset_bottom = 380.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 200
+alignment = 1
